@@ -1,4 +1,0 @@
-#Mon Jan 09 09:41:11 CET 2023
-base.0=/Users/sebastienroche/AndroidStudioProjects/QCS_APP/QCS_APP/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
