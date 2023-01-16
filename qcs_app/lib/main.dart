@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qcs_app/design_system/tile.dart';
 import 'package:qcs_app/design_system/custom_app_bar.dart';
+import 'package:qcs_app/design_system/custom_grid_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -74,7 +75,7 @@ final bodyPadding = 100;
         crossAxisSpacing: 8,
         mainAxisSpacing: 8,
         padding: const EdgeInsets.all(20),
-        children: List.generate(8, (index) {//Nombre de tuiles
+        children: List.generate(8, (index) {//Pour chaque tuiles (8)
           return Tile();
         }),
       ),
