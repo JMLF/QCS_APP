@@ -8,7 +8,14 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(title),
+      title: Row(
+        children: [
+          Image.asset("assets/images/IconApp.png"),
+          SizedBox(width: 40),
+          Text(title),
+
+        ],
+      ),
       backgroundColor: Colors.white,
       centerTitle: true,
       toolbarHeight: 70,
@@ -20,9 +27,6 @@ class CustomAppBar extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ).headline6,
-      actions: const [
-        Icon(Icons.account_balance_wallet),
-      ],
     );
   }
 }

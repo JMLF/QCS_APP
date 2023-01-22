@@ -1,23 +1,25 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:qcs_app/design_system/tile.dart';
+import 'package:qcs_app/models/crypto_model.dart';
 
 class CustomGridView extends StatelessWidget {
-  final List<String> items;
-  final int crossAxisCount;
-
-  CustomGridView({required this.items, required this.crossAxisCount});
+  final List<Crypto> cryptos;
+  CustomGridView({required this.cryptos});
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      itemCount: items.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: crossAxisCount),
-      itemBuilder: (BuildContext context, int index) {
-        return Container(
-          child: const Text("Salut"),
-        );
-      },
+    return GridView.count(
+      crossAxisCount: 2,
+      crossAxisSpacing: 8,
+      mainAxisSpacing: 8,
+      padding: const EdgeInsets.all(20),
+      children: List.generate(cryptos.length, (index) {
+        return Tile(crypto : cryptos[index]);
+      }),
     );
   }
+
 }
 

@@ -32,7 +32,8 @@ dev_dependencies:
 
 
 flutter:
-
+  assets:
+    - assets/images/IconApp.png
   uses-material-design: true
 
  
