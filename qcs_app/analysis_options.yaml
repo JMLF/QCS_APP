@@ -2,9 +2,7 @@ include: package:lints/recommended.yaml
 analyzer:
         errors:
             dead_code: warning        
-        strong-mode:
-            implicit-casts: false
-            implicit-dynamic: false
+        
 
 linter:
     rules:
