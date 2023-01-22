@@ -5,7 +5,7 @@ import 'package:qcs_app/design_system/tile.dart';
 import 'package:qcs_app/models/crypto_model.dart';
 
 class CustomGridView extends StatelessWidget {
-  final List<Crypto> cryptos;
+  final List<Crypto>? cryptos;
   CustomGridView({required this.cryptos});
 
   @override
@@ -15,8 +15,8 @@ class CustomGridView extends StatelessWidget {
       crossAxisSpacing: 8,
       mainAxisSpacing: 8,
       padding: const EdgeInsets.all(20),
-      children: List.generate(cryptos.length, (index) {
-        return Tile(crypto : cryptos[index]);
+      children: List.generate(cryptos!.length, (index) {
+        return Tile(crypto : cryptos![index]);
       }),
     );
   }
