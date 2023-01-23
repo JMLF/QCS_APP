@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:qcs_app/Screen/ScreenDetail/Screen_detail_arg.dart';
 import 'package:qcs_app/models/crypto_model.dart';
 
 class Tile extends StatelessWidget {
@@ -9,7 +10,7 @@ Tile({required this.crypto});
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      //onTap: () => Navigator.of(context).pushNamed(routeName),
+      onTap: () => Navigator.of(context).pushNamed('/detail', arguments: ScreenDetailArgument(crypto: crypto)),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
