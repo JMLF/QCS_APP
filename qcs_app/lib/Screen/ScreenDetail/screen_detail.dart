@@ -28,7 +28,7 @@ class _ScreenDetailState extends State<ScreenDetail> {
       backgroundColor: Colors.black,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70),
-        child: CustomAppBar(title: args.crypto.name),
+        child: CustomAppBar(title: args.crypto.name, logo: false,),
       ),
       body: Container(),
       // FutureBuilder<List<Crypto>?>(

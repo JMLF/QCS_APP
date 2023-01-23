@@ -6,7 +6,6 @@ import 'package:qcs_app/design_system/process_indicator.dart';
 import 'package:qcs_app/models/crypto_model.dart';
 import 'package:qcs_app/repository/trending_coins_repository.dart';
 
-
 class ScreenHome extends StatefulWidget {
   const ScreenHome({Key? key}) : super(key: key);
 
@@ -17,43 +16,43 @@ class ScreenHome extends StatefulWidget {
 }
 
 class ScreenHomeState extends State<ScreenHome> {
-  
   late Future<List<Crypto>?> futureCryptoData;
 
   // == API ==
   Future<List<Crypto>?> fetchCryptoData() async {
     List<Crypto>? data = await TrendingRepository.getTrendingRepo();
-    return data;   
+    return data;
   }
-  
+
   @override
   void initState() {
     super.initState();
-  futureCryptoData = fetchCryptoData();
+    futureCryptoData = fetchCryptoData();
   }
 
   FutureOr onGoBack(dynamic value) {
-  futureCryptoData = fetchCryptoData();
+    futureCryptoData = fetchCryptoData();
   }
 
   // === Build ===
   @override
   Widget build(BuildContext context) {
-   
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70),
-        child: CustomAppBar(title: "Les cryptos du moment"),
+        child: CustomAppBar(
+          title: "Les cryptos du moment",
+          logo: true,
+        ),
       ),
-    
       body: FutureBuilder<List<Crypto>?>(
         future: futureCryptoData,
         builder: (context, snapshot) {
           if (snapshot.hasData && snapshot.data != null) {
             return CustomGridView(cryptos: snapshot.data);
           } else {
-          return ProcessIndicator();
+            return ProcessIndicator();
           }
         },
       ),
