@@ -30,10 +30,6 @@ class ScreenHomeState extends State<ScreenHome> {
     futureCryptoData = fetchCryptoData();
   }
 
-  FutureOr onGoBack(dynamic value) {
-    futureCryptoData = fetchCryptoData();
-  }
-
   // === Build ===
   @override
   Widget build(BuildContext context) {
