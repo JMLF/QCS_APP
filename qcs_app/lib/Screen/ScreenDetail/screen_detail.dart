@@ -3,6 +3,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:qcs_app/Screen/ScreenDetail/Screen_detail_arg.dart';
 import 'package:qcs_app/design_system/custom_app_bar.dart';
+import 'package:qcs_app/models/crypto_detailed.dart';
+import 'package:qcs_app/repository/detailed_coins_repository.dart';
 
 
 class ScreenDetail extends StatefulWidget {
@@ -15,6 +17,15 @@ class ScreenDetail extends StatefulWidget {
 }
 
 class _ScreenDetailState extends State<ScreenDetail> {
+
+  late Future<CryptoDetail> futureCryptoData;
+
+  // == API ==
+  // Future<CryptoDetail> fetchCryptoData() async {
+  //   CryptoDetail data = await DetailRepository.getDetailRepo();
+  //   return data;
+  // }
+
   @override
   void initState() {
     super.initState();
