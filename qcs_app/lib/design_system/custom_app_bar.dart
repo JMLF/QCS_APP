@@ -10,13 +10,24 @@ class CustomAppBar extends StatelessWidget {
     return AppBar(
       title: Row(
         children: [
-          Image.asset("assets/images/IconApp.png"),
-          SizedBox(width: 40),
-          Text(title),
-
+          Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Image.asset(
+              "assets/images/IconApp.png",
+            ),
+          ),
+          SizedBox(
+            width: 30,
+          ),
+          Text(
+            title,
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
         ],
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       centerTitle: true,
       toolbarHeight: 70,
       elevation: 0,
@@ -30,4 +41,3 @@ class CustomAppBar extends StatelessWidget {
     );
   }
 }
-

@@ -1,5 +1,3 @@
-
-
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:qcs_app/design_system/custom_app_bar.dart';
@@ -43,7 +41,7 @@ class ScreenHomeState extends State<ScreenHome> {
   Widget build(BuildContext context) {
    
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.black,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70),
         child: CustomAppBar(title: "Les cryptos du moment"),

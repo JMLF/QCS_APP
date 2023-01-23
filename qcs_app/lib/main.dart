@@ -5,8 +5,7 @@ import 'package:qcs_app/design_system/tile.dart';
 import 'package:qcs_app/design_system/custom_app_bar.dart';
 import 'package:qcs_app/design_system/custom_grid_view.dart';
 import 'package:qcs_app/navigator.dart';
-import 'package:qcs_app/repository/trending_coins_repository.dart';
-import 'package:qcs_app/models/crypto_model.dart';
+
 
 void main() {
   runApp(const MyApp());
