@@ -14,17 +14,17 @@ class CustomAppBar extends StatelessWidget {
             padding: const EdgeInsets.only(left: 10),
             child: Image.asset(
               "assets/images/IconApp.png",
+              fit: BoxFit.contain,
             ),
           ),
-          SizedBox(
-            width: 30,
-          ),
-          Text(
-            title,
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          ),
+          Container(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                title,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              )),
         ],
       ),
       backgroundColor: Colors.black,
