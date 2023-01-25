@@ -1,7 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:qcs_app/Screen/ScreenDetail/Screen_detail_arg.dart';
+import 'package:qcs_app/Screen/ScreenDetail/screen_detail.dart';
+import 'package:qcs_app/models/crypto_detailed.dart';
 import 'package:qcs_app/models/crypto_model.dart';
+import 'package:qcs_app/repository/detailed_coins_repository.dart';
 
 class Tile extends StatelessWidget {
 final Crypto crypto;
@@ -9,8 +12,9 @@ final Crypto crypto;
 Tile({required this.crypto});
   @override
   Widget build(BuildContext context) {
+    Future<CryptoDetail?> detaiCrypto =  DetailRepository.getDetailRepo(crypto.id);
     return InkWell(
-      onTap: () => Navigator.of(context).pushNamed('/detail', arguments: ScreenDetailArgument(crypto: crypto)),
+      onTap: () async => Navigator.of(context).pushNamed('/detail', arguments: ScreenDetailArgument(crypto: await detaiCrypto ?? CryptoDetail(description: "api null", sentiment_votes_up_percentage: "api null", sentiment_votes_down_percentage: "api null", public_interest_score: "api null", coingecko_rank: "api null", coingecko_score: "api null", community_score: "api null", developer_score: "api null", liquidity_score: "api null", market_cap_rank: "api null", name: 'api null', thumb: 'api null'))),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),

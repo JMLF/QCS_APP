@@ -1,6 +1,6 @@
-
 class CryptoDetail {
-
+  String name;
+  String thumb;
   String description;
   dynamic sentiment_votes_up_percentage;
   dynamic sentiment_votes_down_percentage;
@@ -13,9 +13,10 @@ class CryptoDetail {
   dynamic public_interest_score;
 
   CryptoDetail({
-    
-   required this.description,
-   required this.sentiment_votes_up_percentage,
+    required this.name,
+    required this.thumb,
+    required this.description,
+    required this.sentiment_votes_up_percentage,
     required this.sentiment_votes_down_percentage,
     required this.public_interest_score,
     required this.coingecko_rank,
@@ -28,11 +29,17 @@ class CryptoDetail {
 
   factory CryptoDetail.fromJson(dynamic json) {
     return CryptoDetail(
-     
-      description: json['description'] == null ? '' : json['description']["en"] as String,
+      thumb: json["image"]["large"] == null
+          ? ''
+          : json["image"]["large"] as String,
+      name: json["name"] == null ? '' : json["name"] as String,
+      description: json['description'] == null
+          ? ''
+          : json['description']["en"] as String,
       sentiment_votes_up_percentage:
           json["sentiment_votes_up_percentage"] ?? '',
-      sentiment_votes_down_percentage: json["sentiment_votes_down_percentage"] ?? '',
+      sentiment_votes_down_percentage:
+          json["sentiment_votes_down_percentage"] ?? '',
       public_interest_score: json["public_interest_score"] ?? '',
       coingecko_rank: json["coingecko_rank"] ?? '',
       coingecko_score: json["coingecko_score"] ?? '',
