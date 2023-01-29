@@ -1,6 +1,6 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=/Users/sebastienroche/Library/Flutter
-FLUTTER_APPLICATION_PATH=/Users/sebastienroche/AndroidStudioProjects/QCS_APP/qcs_app
+FLUTTER_ROOT=/Users/marius/dev/flutter
+FLUTTER_APPLICATION_PATH=/Users/marius/Documents/Cours/Qualité du code source/AppliQCS/qcs_app
 COCOAPODS_PARALLEL_CODE_SIGN=true
 FLUTTER_TARGET=lib/main.dart
 FLUTTER_BUILD_DIR=build

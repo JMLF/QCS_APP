@@ -7,3 +7,8 @@ analyzer:
 linter:
     rules:
          - avoid_unused_constructor_parameters
+         - avoid_print: true
+         - prefer_single_quotes: false
+         - always_put_control_body_on_new_line
+
+
